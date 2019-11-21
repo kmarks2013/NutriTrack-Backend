@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
     t.bigint "user_id"
     t.bigint "meal_type_id"
     t.bigint "food_id"
+    t.integer "serving"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["food_id"], name: "index_daily_intakes_on_food_id"
@@ -29,10 +30,10 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.integer "calorie"
-    t.integer "protein"
-    t.integer "fat"
-    t.integer "carbs"
-    t.integer "sugar"
+    t.float "protein"
+    t.float "fat"
+    t.float "carbs"
+    t.float "sugar"
     t.integer "serving_size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

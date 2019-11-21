@@ -4,6 +4,7 @@ class CreateDailyIntakes < ActiveRecord::Migration[6.0]
       t.belongs_to :user
       t.belongs_to :meal_type
       t.belongs_to :food
+      t.integer :serving
       t.timestamps
     end
   end
