@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
+
+    def index
+        users = User.all 
+        render json: users
+    end
     def create
         user = User.create(user_params)
         if user.valid?
-         password = params[:password]
-            render json: { token: encoded_token(user_payload(password))}
+            render json: { token: encoded_token(user_payload(user))}
         else
             render json: { errors: user.errors.full_messages}
         end
