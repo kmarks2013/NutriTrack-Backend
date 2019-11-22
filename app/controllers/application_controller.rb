@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
 
-    def user_payload(password)
-       { password: password } 
+    def user_payload(user)
+       { user_id: user.id } 
     end
 
     def encoded_token(payload)
