@@ -40,7 +40,7 @@ foods = Food.create([
     {name: 'Fish, raw, sockeye, salmon', calorie: 131, fat: 4.7, carbs: 0, sugar: 0, protein:  22, serving_size: 100},
     {name: 'Soymilk (All flavors), enhanced', calorie: 45, fat: 2, carbs: 3.5, sugar: 2.5, protein: 2.9, serving_size: 100},
     {name: 'Soymilk, unfortified, chocolate', calorie: 63, fat: 1.5, carbs: 10, sugar: 7.9, protein: 2.3, serving_size: 100},
-    # {name: 'Cauliflower, with salt, cooked, green', calorie: 32, fat: 0.3, carbs: 6.3, sugar: 3.3, protein: 3, serving_size: 100},
+    {name: 'Cauliflower, with salt, cooked, green', calorie: 32, fat: 0.3, carbs: 6.3, sugar: 3.3, protein: 3, serving_size: 100},
     # {name: '', calorie:, fat:, carbs:, sugar:, protein:, serving_size: 100}
 ])
 

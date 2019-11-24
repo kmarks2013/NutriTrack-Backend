@@ -5,8 +5,12 @@ class ApplicationController < ActionController::API
     end
 
     def encoded_token(payload)
-        JWT.encode(payload, "secretkey", "HS256")
+        JWT.encode(payload, secret_key, "HS256")
     end
 
-    
+    def secret_key
+        Rails.application.credentials.secret_keygit 
+    end
+   
+    # byebug
 end
