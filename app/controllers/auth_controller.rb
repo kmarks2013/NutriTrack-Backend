@@ -11,10 +11,10 @@ class AuthController < ApplicationController
                 render json: { token: encoded_token(user_payload(user))}
 
             else
-                render json: {error: "You are a dead man/woman! How dare you steal my identication?"}
+                render json: {error: "NICE TRY BUDDY, NICE TRY! THANK YOU, DON'T COME AGAIN ✋🏽"}
             end
         else  
-            render json: {error: "There is no user found"}
+            render json: {error: "HIMMMM LETS THINK WHERE DID YOU SCREW UP? 🤔"}
         end 
     end
 end
