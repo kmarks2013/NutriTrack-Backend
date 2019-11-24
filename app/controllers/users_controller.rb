@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     def profile 
         token = request.headers["Authorization"]
        if token
-            decoded_token = JWT.decode(token, secret_key , true, {algorithm: 'HS256'})
+            decoded_token = JWT.decode(token, 'secretkey', true, {algorithm: 'HS256'})
             user_id = decoded_token[0]["user_id"]
             user = User.find(user_id)
             if user 
@@ -27,10 +27,18 @@ class UsersController < ApplicationController
          end
     end
 
+    def update
+        
+    end
+
     private 
 
     def user_params
         params.permit(:username, :password, :name, :gender, :image, :height, :age, :goal_calorie, :weight)
+    end
+
+    def update_params
+        params.permit(:username, :name, :gender, :image, :height, :age, :goal_calorie, :weight)
     end
 
 end

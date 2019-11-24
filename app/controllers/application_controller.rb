@@ -9,8 +9,8 @@ class ApplicationController < ActionController::API
     end
 
     def secret_key
-        Rails.application.credentials.secret_keygit 
-    end
+        Rails.application.credentials.secret_key
+    end 
    
     # byebug
 end
