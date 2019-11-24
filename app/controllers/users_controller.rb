@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     end
 
     def profile 
-        token = request.headers["Authorization"].split(" ").last
+        token = request.headers["Authorization"]
        if token
-            decoded_token = JWT.decode(token, 'secretkey', true, {algorithm: 'HS256'})
+            decoded_token = JWT.decode(token, secret_key , true, {algorithm: 'HS256'})
             user_id = decoded_token[0]["user_id"]
             user = User.find(user_id)
             if user 
