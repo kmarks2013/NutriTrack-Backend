@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
     t.string "password_digest"
     t.integer "age"
     t.string "gender"
-    t.float "weigth"
+    t.float "weight"
     t.float "height"
     t.string "image"
     t.string "username"
