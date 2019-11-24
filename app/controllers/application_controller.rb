@@ -7,4 +7,6 @@ class ApplicationController < ActionController::API
     def encoded_token(payload)
         JWT.encode(payload, "secretkey", "HS256")
     end
+
+    
 end
