@@ -13,9 +13,8 @@ class UsersController < ApplicationController
         end
     end
 
-    def profile 
-       user_id = params[:id]
-        if current_user.id.to_i == user_id.to_i
+    def profile
+        if current_user
             render json: current_user
         else
             render json: {error: 'There is no user found'}
