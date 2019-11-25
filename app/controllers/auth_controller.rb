@@ -9,7 +9,7 @@ class AuthController < ApplicationController
 
 
             if is_authenticated
-                render json: { token: encoded_token(user_payload(user))}
+                render json: { token: encoded_token(user_payload(user)), current_user: user}
 
             else
                 render json: {error: "NICE TRY BUDDY, NICE TRY! THANK YOU, DON'T COME AGAIN ✋🏽"}
