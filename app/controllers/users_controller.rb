@@ -9,36 +9,23 @@ class UsersController < ApplicationController
         if user.valid?
             render json: { token: encoded_token(user_payload(user))}
         else
-            render json: { errors: user.errors.full_messages}
+            render json: { error: user.errors.full_messages}
         end
     end
 
     def profile 
-        token = request.headers["Authorization"]
-       if token
-            decoded_token = JWT.decode(token, 'secretkey', true, {algorithm: 'HS256'})
-            user_id = decoded_token[0]["user_id"]
-            user = User.find(user_id)
-            if user 
-                render json: user
-            else
-                render json: {error: 'There is no user found'}
-            end
-         end
-    end
-
-    def update
-        
+       user_id = params[:id]
+        if current_user.id.to_i == user_id.to_i
+            render json: current_user
+        else
+            render json: {error: 'There is no user found'}
+        end
     end
 
     private 
 
     def user_params
         params.permit(:username, :password, :name, :gender, :image, :height, :age, :goal_calorie, :weight)
-    end
-
-    def update_params
-        params.permit(:username, :name, :gender, :image, :height, :age, :goal_calorie, :weight)
     end
 
 end
