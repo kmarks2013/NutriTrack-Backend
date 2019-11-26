@@ -2,12 +2,12 @@ class AuthController < ApplicationController
     def login
     
         user = User.find_by(username: params[:username])
-  
+        # byebug
         if user 
             password = params[:password]
             is_authenticated = user.authenticate(password)
 
-
+          
             if is_authenticated
                 render json: { token: encoded_token(user_payload(user)), current_user: user}
 
