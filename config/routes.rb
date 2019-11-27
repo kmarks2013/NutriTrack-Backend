@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :foods
-  resources :meal_types
+
   resources :daily_intakes
   resources :users
   post "/login", to: "auth#login"

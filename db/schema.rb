@@ -17,13 +17,12 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
 
   create_table "daily_intakes", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "meal_type_id"
+    t.string "meal_type"
     t.bigint "food_id"
     t.integer "serving"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["food_id"], name: "index_daily_intakes_on_food_id"
-    t.index ["meal_type_id"], name: "index_daily_intakes_on_meal_type_id"
     t.index ["user_id"], name: "index_daily_intakes_on_user_id"
   end
 
@@ -35,12 +34,6 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
     t.float "carbs"
     t.float "sugar"
     t.integer "serving_size"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "meal_types", force: :cascade do |t|
-    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
