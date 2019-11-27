@@ -3,5 +3,4 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :daily_intakes
   has_many :foods 
-  has_many :meal_types
 end
