@@ -10,6 +10,10 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :image
       t.string :username
       t.integer :goal_calorie
+      t.float :goal_carbs
+      t.float :goal_fat
+      t.float :goal_sugar
+      t.float :goal_protein
 
       t.timestamps
     end
