@@ -26,13 +26,24 @@ class User < ApplicationRecord
          return total_calorie
     end
 
+    def remaining_calories
+       remaining= 0
+       remaining = self.goal_calorie - self.total_calories 
+       return remaining
+    end
+
     def total_fat
-        
         total_fat = 0
          self.foods.map do |food|
             total_fat += food.fat
          end
-         return total_fat.round(2)
+       return total_fat.round(2)
+    end
+
+    def remaining_fat
+       remaining= 0
+       remaining = self.goal_fat - self.total_fat
+       return remaining.round(2)
     end
 
     def total_carbs
@@ -40,8 +51,14 @@ class User < ApplicationRecord
          self.foods.map do |food|
             total_carbs += food.carbs
          end
-         return total_carbs.round(2)
+      return total_carbs.round(2)
     end
+
+    def remaining_carbs
+      remaining= 0
+      remaining = self.goal_carbs - self.total_carbs
+      return remaining.round(2)
+   end
 
     def total_protein
         total_protein = 0
@@ -51,6 +68,12 @@ class User < ApplicationRecord
          return total_protein.round(2)
     end
 
+    def remaining_protein
+      remaining= 0
+      remaining = self.goal_protein - self.total_protein
+      return remaining.round(2)
+   end
+
     def total_sugar
         total_sugar = 0
          self.foods.map do |food|
@@ -58,4 +81,10 @@ class User < ApplicationRecord
          end
          return total_sugar.round(2)
     end
+
+    def remaining_sugar
+      remaining= 0
+      remaining = self.goal_sugar - self.total_sugar
+      return remaining.round(2)
+   end
 end
