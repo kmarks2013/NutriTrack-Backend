@@ -14,6 +14,11 @@ class DailyIntakesController < ApplicationController
         render json: daily_intake
     end
 
+    def destroy
+        daily_intake = DailyIntake.find(params[:id])
+        daily_intake.destroy
+    end
+
     private 
 
     def daily_intake_params
