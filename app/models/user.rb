@@ -18,13 +18,11 @@ class User < ApplicationRecord
    end
 
 
-
    def total_calories
-       
        total_calorie = 0
-       if self.foods
-        self.foods.map do |food|
-           total_calorie += food.calorie
+       if self.daily_intakes
+        self.daily_intakes.map do |daily_intake|
+           total_calorie += daily_intake.total_calories
         end
       end
         return total_calorie
@@ -39,13 +37,13 @@ class User < ApplicationRecord
    end
 
    def total_fat
-       total_fat = 0
-       if self.foods
-        self.foods.map do |food|
-           total_fat += food.fat
+       total = 0
+       if self.daily_intakes
+        self.daily_intakes.map do |daily_intake|
+           total += daily_intake.total_fat
         end
       end
-      return total_fat.round(2)
+      return total.round(2)
    end
 
    def remaining_fat
@@ -57,14 +55,14 @@ class User < ApplicationRecord
    end
 
    def total_carbs
-       total_carbs = 0
-       if self.foods
-        self.foods.map do |food|
-           total_carbs += food.carbs
-        end
-      end
-     return total_carbs.round(2)
-   end
+      total = 0
+      if self.daily_intakes
+       self.daily_intakes.map do |daily_intake|
+          total += daily_intake.total_carbs
+       end
+     end
+     return total.round(2)
+  end
 
    def remaining_carbs
      remaining= 0
@@ -74,15 +72,15 @@ class User < ApplicationRecord
      return remaining.round(2)
   end
 
-   def total_protein
-       total_protein = 0
-       if self.foods
-        self.foods.map do |food|
-           total_protein += food.protein
-        end
-      end
-        return total_protein.round(2)
-   end
+  def total_protein
+   total = 0
+   if self.daily_intakes
+    self.daily_intakes.map do |daily_intake|
+       total += daily_intake.total_protein
+    end
+  end
+  return total.round(2)
+ end
 
    def remaining_protein
      remaining= 0
@@ -92,15 +90,15 @@ class User < ApplicationRecord
      return remaining.round(2)
   end
 
-   def total_sugar
-       total_sugar = 0
-       if self.foods
-        self.foods.map do |food|
-           total_sugar += food.sugar
-        end
-      end
-        return total_sugar.round(2)
-   end
+  def total_sugar
+   total = 0
+   if self.daily_intakes
+    self.daily_intakes.map do |daily_intake|
+       total += daily_intake.total_sugar
+    end
+  end
+  return total.round(2)
+ end
 
    def remaining_sugar
      remaining= 0
