@@ -29,8 +29,8 @@ class UsersController < ApplicationController
     def update
         user = User.find(params[:id])
         user.update(update_params)
-        if user.update(user_params)
-            render json: user, include: '**'
+        if user.update(update_params)
+            render json: user
         else
           render json: { error: user.errors.full_messages}
         end
@@ -44,11 +44,11 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-        params.permit(:username, :password, :name, :gender, :image, :height, :age, :goal_calorie, :weight)
+        params.permit(:username, :password, :name, :gender, :image, :height, :age, :goal_calorie, :weight, :goal_carbs, :goal_fat, :goal_sugar, :goal_protein)
     end
 
     def update_params
-        params.permit(:username, :name, :gender, :image, :height, :age, :goal_calorie, :weight)
+        params.permit(:username, :name, :gender, :image, :height, :age, :goal_calorie, :weight, :goal_carbs, :goal_fat, :goal_sugar, :goal_protein)
     end
 
 end

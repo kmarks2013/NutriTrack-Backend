@@ -15,6 +15,8 @@ class User < ApplicationRecord
          return total_servings
     end
 
+
+
     def total_calories
         
         total_calorie = 0
@@ -30,7 +32,7 @@ class User < ApplicationRecord
          self.foods.map do |food|
             total_fat += food.fat
          end
-         return total_fat
+         return total_fat.round(2)
     end
 
     def total_carbs
@@ -38,7 +40,7 @@ class User < ApplicationRecord
          self.foods.map do |food|
             total_carbs += food.carbs
          end
-         return total_carbs
+         return total_carbs.round(2)
     end
 
     def total_protein
@@ -46,7 +48,7 @@ class User < ApplicationRecord
          self.foods.map do |food|
             total_protein += food.protein
          end
-         return total_protein
+         return total_protein.round(2)
     end
 
     def total_sugar
@@ -54,6 +56,6 @@ class User < ApplicationRecord
          self.foods.map do |food|
             total_sugar += food.sugar
          end
-         return total_sugar
+         return total_sugar.round(2)
     end
 end

@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
     t.string "image"
     t.string "username"
     t.integer "goal_calorie"
+    t.float "goal_carbs"
+    t.float "goal_fat"
+    t.float "goal_sugar"
+    t.float "goal_protein"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
