@@ -30,7 +30,7 @@ class DailyIntake < ApplicationRecord
     def total_protein
         total= 0
         if self.food
-            total = self.food.protein* self.serving
+            total = self.food.protein * self.serving
         end
         return total
     end
@@ -38,7 +38,7 @@ class DailyIntake < ApplicationRecord
     def total_sugar
         total= 0
         if self.food
-            total = self.food.sugar* self.serving
+            total = self.food.sugar * self.serving
         end
         return total
     end
