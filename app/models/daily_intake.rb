@@ -43,5 +43,23 @@ class DailyIntake < ApplicationRecord
         return total.round(2)
     end
 
+    def changed_date
+        splitted_date = self.date.to_s.split('-')
+        new_date= ""
+
+        month = splitted_date.second
+        year = splitted_date.first 
+        day = splitted_date.last
+        
+        if day[0]== "0"
+            day = day.split('').pop
+        else 
+           day = day
+        end
+        return new_date = month + "/" + day + "/" + year
+
+    
+    end
+
 
 end
