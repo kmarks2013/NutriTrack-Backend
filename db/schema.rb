@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
   create_table "daily_intakes", force: :cascade do |t|
     t.bigint "user_id"
     t.string "meal_type"
+    t.date "date"
     t.bigint "food_id"
     t.integer "serving"
     t.datetime "created_at", precision: 6, null: false

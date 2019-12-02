@@ -29,10 +29,10 @@ class DailyIntakesController < ApplicationController
     private 
 
     def daily_intake_params
-        params.permit(:user_id, :food_id, :meal_type, :serving )
+        params.permit(:user_id, :food_id, :meal_type, :serving , :date)
     end
 
     def update_params
-        params.permit(:meal_type, :serving)
+        params.permit(:meal_type, :serving, :date)
     end
 end
