@@ -7,7 +7,7 @@ class DailyIntake < ApplicationRecord
         if self.food
             total = self.food.calorie * self.serving
         end
-        return total
+        return total.round(2)
     end
 
 
@@ -16,7 +16,7 @@ class DailyIntake < ApplicationRecord
         if self.food
             total = self.food.fat * self.serving
         end
-        return total
+        return total.round(2)
     end
 
     def total_carbs
@@ -24,7 +24,7 @@ class DailyIntake < ApplicationRecord
         if self.food
             total = self.food.carbs * self.serving
         end
-        return total
+        return total.round(2)
     end
 
     def total_protein
@@ -32,7 +32,7 @@ class DailyIntake < ApplicationRecord
         if self.food
             total = self.food.protein * self.serving
         end
-        return total
+        return total.round(2)
     end
 
     def total_sugar
@@ -40,7 +40,7 @@ class DailyIntake < ApplicationRecord
         if self.food
             total = self.food.sugar * self.serving
         end
-        return total
+        return total.round(2)
     end
 
 

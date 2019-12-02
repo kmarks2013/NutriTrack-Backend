@@ -11,13 +11,13 @@ class DailyIntakesController < ApplicationController
 
     def create
         daily_intake = DailyIntake.create(daily_intake_params)
-        render json: daily_intake
+        render json: daily_intake.user
     end
 
     def update
         daily_intake = DailyIntake.find(params[:id])
         daily_intake.update(update_params)
-        render json: daily_intake
+        render json: daily_intake.user
     end
 
 
