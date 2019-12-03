@@ -1,7 +1,9 @@
 class DailyIntakesController < ApplicationController
     def index
         daily_intakes = DailyIntake.all 
-        render json: daily_intakes
+        
+
+        render json: current_user.daily_intakes
     end
 
     def show 
@@ -17,7 +19,7 @@ class DailyIntakesController < ApplicationController
     def update
         daily_intake = DailyIntake.find(params[:id])
         daily_intake.update(update_params)
-        render json: daily_intake.user
+        render json: daily_intake
     end
 
 

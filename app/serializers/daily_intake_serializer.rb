@@ -1,5 +1,5 @@
 class DailyIntakeSerializer < ActiveModel::Serializer
-  attributes :id, :user, :food, :meal_type, :serving, :total_calories, :total_fat, :total_carbs, :total_protein, :total_sugar, :changed_date
+  attributes :id, :user, :food, :meal_type, :serving, :total_calories, :total_fat, :total_carbs, :total_protein, :total_sugar, :date, :changed_date
 
 
   belongs_to :user
