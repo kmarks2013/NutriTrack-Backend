@@ -57,8 +57,6 @@ class DailyIntake < ApplicationRecord
            day = day
         end
         return new_date = month + "/" + day + "/" + year
-
-    
     end
 
 
