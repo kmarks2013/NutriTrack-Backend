@@ -25,7 +25,9 @@ class DailyIntakesController < ApplicationController
 
     def destroy
         daily_intake = DailyIntake.find(params[:id])
+      
         daily_intake.destroy
+        
     end
 
     private 

@@ -28,13 +28,13 @@ class User < ApplicationRecord
         return total_calorie
    end
 
-   def remaining_calories
-      remaining= 0
-      if self.goal_calorie 
-      remaining = self.goal_calorie - self.total_calories 
-      end
-      return remaining
-   end
+   # def remaining_calories
+   #    remaining= 0
+   #    if self.goal_calorie 
+   #    remaining = self.goal_calorie - self.total_calories 
+   #    end
+   #    return remaining
+   # end
 
    def total_fat
        total = 0
@@ -46,13 +46,13 @@ class User < ApplicationRecord
       return total.round(2)
    end
 
-   def remaining_fat
-      remaining= 0
-      if self.goal_fat
-      remaining = self.goal_fat - self.total_fat
-      end
-      return remaining.round(2)
-   end
+   # def remaining_fat
+   #    remaining= 0
+   #    if self.goal_fat
+   #    remaining = self.goal_fat - self.total_fat
+   #    end
+   #    return remaining.round(2)
+   # end
 
    def total_carbs
       total = 0
@@ -64,13 +64,13 @@ class User < ApplicationRecord
      return total.round(2)
   end
 
-   def remaining_carbs
-     remaining= 0
-     if self.goal_carbs
-     remaining = self.goal_carbs - self.total_carbs
-     end
-     return remaining.round(2)
-  end
+#    def remaining_carbs
+#      remaining= 0
+#      if self.goal_carbs
+#      remaining = self.goal_carbs - self.total_carbs
+#      end
+#      return remaining.round(2)
+#   end
 
   def total_protein
    total = 0
@@ -82,13 +82,13 @@ class User < ApplicationRecord
   return total.round(2)
  end
 
-   def remaining_protein
-     remaining= 0
-     if self.goal_protein
-     remaining = self.goal_protein - self.total_protein
-     end
-     return remaining.round(2)
-  end
+#    def remaining_protein
+#      remaining= 0
+#      if self.goal_protein
+#      remaining = self.goal_protein - self.total_protein
+#      end
+#      return remaining.round(2)
+#   end
 
   def total_sugar
    total = 0
@@ -100,11 +100,11 @@ class User < ApplicationRecord
   return total.round(2)
  end
 
-   def remaining_sugar
-     remaining= 0
-     if self.goal_sugar
-     remaining = self.goal_sugar - self.total_sugar
-     end
-     return remaining.round(2)
-  end
+#    def remaining_sugar
+#      remaining= 0
+#      if self.goal_sugar
+#      remaining = self.goal_sugar - self.total_sugar
+#      end
+#      return remaining.round(2)
+#   end
 end
