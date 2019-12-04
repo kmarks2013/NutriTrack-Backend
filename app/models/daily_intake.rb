@@ -43,13 +43,13 @@ class DailyIntake < ApplicationRecord
         return total.round(2)
     end
 
-    def user_remaining_calories
-        remaining = 0
-        if self.user.goal_calorie
-        remaining = self.user.goal_calorie - self.total_calories
-        end
-        return remaining
-    end
+    # def user_remaining_calories
+    #     remaining = 0
+    #     if self.user.goal_calorie
+    #     remaining = self.user.goal_calorie - self.total_calories
+    #     end
+    #     return remaining
+    # end
 
     # def user_remaining_fat
     #     remaining= 0
