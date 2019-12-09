@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
    validates :username, uniqueness: true
 
+
   
    def total_servings
        total_servings = 0

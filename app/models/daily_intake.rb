@@ -2,6 +2,10 @@ class DailyIntake < ApplicationRecord
     belongs_to :user
     belongs_to :food
 
+    
+   
+
+
     def total_calories
         total= 0
         if self.food
