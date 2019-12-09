@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :daily_intakes
   resources :users
 
-  root "application#index"
+  resources :action_controller
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
