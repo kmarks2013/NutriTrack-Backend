@@ -17,22 +17,23 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
 
   create_table "daily_intakes", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "meal_type_id"
+    t.string "meal_type"
+    t.date "date"
     t.bigint "food_id"
+    t.integer "serving"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["food_id"], name: "index_daily_intakes_on_food_id"
-    t.index ["meal_type_id"], name: "index_daily_intakes_on_meal_type_id"
     t.index ["user_id"], name: "index_daily_intakes_on_user_id"
   end
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.integer "calorie"
-    t.integer "protein"
-    t.integer "fat"
-    t.integer "carbs"
-    t.integer "sugar"
+    t.float "protein"
+    t.float "fat"
+    t.float "carbs"
+    t.float "sugar"
     t.integer "serving_size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -49,11 +50,15 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
     t.string "password_digest"
     t.integer "age"
     t.string "gender"
-    t.float "weigth"
+    t.float "weight"
     t.float "height"
     t.string "image"
     t.string "username"
     t.integer "goal_calorie"
+    t.float "goal_carbs"
+    t.float "goal_fat"
+    t.float "goal_sugar"
+    t.float "goal_protein"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
