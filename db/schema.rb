@@ -39,12 +39,6 @@ ActiveRecord::Schema.define(version: 2019_11_20_201913) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "meal_types", force: :cascade do |t|
-    t.string "type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"

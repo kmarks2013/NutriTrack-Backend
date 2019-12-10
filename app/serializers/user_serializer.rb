@@ -8,4 +8,8 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :daily_intakes
   has_many :foods 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> b5b52b148b90c158b54f2a194462650dd571e892

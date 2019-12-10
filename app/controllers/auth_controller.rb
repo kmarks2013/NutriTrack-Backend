@@ -19,4 +19,8 @@ class AuthController < ApplicationController
             render json: {error: "HIMMMM LETS THINK WHERE DID YOU SCREW UP? 🤔"}
         end 
     end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> b5b52b148b90c158b54f2a194462650dd571e892
