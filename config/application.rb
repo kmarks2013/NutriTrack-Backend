@@ -1,5 +1,5 @@
 require_relative 'boot'
-
+# this is a test comment 
 require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
